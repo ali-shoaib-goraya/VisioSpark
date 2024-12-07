@@ -5,10 +5,10 @@ import { Loader } from 'lucide-react';
 import HomePage from './pages/HomePage';
 import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
-import ProfilePage from './pages/ProfilePage';
+
 import { useAuthStore } from './store/useAuthStore';
 import { useEffect } from 'react';
-import SettingPage from './pages/SettingPage';
+
 import { Toaster } from 'react-hot-toast';
 
 export default function App() {
@@ -44,11 +44,7 @@ export default function App() {
           path="/login"
           element={!authUser ? <LoginPage /> : <Navigate to="/" />}
         />
-        <Route path="/settings" element={<SettingPage />} />
-        <Route
-          path="/profile"
-          element={authUser ? <ProfilePage /> : <Navigate to="/login" />}
-        />
+
       </Routes>
       <Toaster  />
     </div>
